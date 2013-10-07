@@ -15,12 +15,14 @@ namespace line
     struct Line3
     {
         vec::Vector3 m_origin;
-        vec::Vector3 m_direction;
+        vec::Vector3 m_direction;   // Should always be normalized
 
         vec::Vector3 DistanceToPoint( vec::Vector3 const& i_point ) const;
+        vec::Vector3 Normal( vec::Vector3 const& i_point ) const;
     };
 
     vec::Vector3 DistanceToPoint( Line3 const& i_line, vec::Vector3 const& i_point );
+    vec::Vector3 Normal( Line3 const& i_line, vec::Vector3 const& i_point );
 }
 
 #endif	/* LINE3_HPP */
